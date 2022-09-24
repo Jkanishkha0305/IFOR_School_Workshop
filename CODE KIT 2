@@ -1,0 +1,136 @@
+// To make a Square Path
+// Motor A connections
+int enA = 6;
+int in1 = 7;
+int in2 = 5;
+// Motor B connections
+int enB = 3;
+int in3 = 4;
+int in4 = 2;
+
+void setup() {
+  // Set all the motor control pins to outputs
+  pinMode(enA, OUTPUT);
+  pinMode(enB, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  
+  // Turn off motors - Initial state
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
+}
+
+void loop() {
+  directionControl();
+  delay(1000);
+//  speedControl();
+//  delay(1000);
+}
+
+// This function lets you control spinning direction of motors
+void directionControl() {
+  // Set motors to maximum speed
+  // For PWM maximum possible values are 0 to 255
+  //test with one connection first
+  analogWrite(enA, 210); //left
+  analogWrite(enB, 230); //right
+
+  // Turn on motor A & B
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  delay(7500);
+  
+  // Now change motor directions
+  //digitalWrite(in1, LOW);
+  //digitalWrite(in2, HIGH);
+  //digitalWrite(in3, LOW);
+  //digitalWrite(in4, HIGH);
+  //delay(2000);
+
+  //right turn
+  analogWrite(enA, 130);
+  analogWrite(enB, 87);
+
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  delay(3000);
+
+  //straight
+  analogWrite(enA, 210);
+  analogWrite(enB, 230);
+
+  // Turn on motor A & B
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  delay(7500);
+ 
+
+  //left turn
+  //analogWrite(enA, 87);
+  //analogWrite(enB, 130);
+
+  //digitalWrite(in1, HIGH);
+  //digitalWrite(in2, LOW);
+  //digitalWrite(in3, HIGH);
+  //digitalWrite(in4, LOW);
+  //delay(2000);
+  
+  //right turn
+  analogWrite(enA, 130);
+  analogWrite(enB, 87);
+
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  delay(3000);
+  
+  //straight
+  analogWrite(enA, 210);
+  analogWrite(enB, 230);
+
+  // Turn on motor A & B
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  delay(7500);
+
+  //right turn
+  analogWrite(enA, 130);
+  analogWrite(enB, 87);
+
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  delay(3000);
+  
+  //straight
+  analogWrite(enA, 210);
+  analogWrite(enB, 230);
+
+  // Turn on motor A & B
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  delay(7500);
+  
+  // Turn off motors
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
+  delay(3500);
+}
